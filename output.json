@@ -1,0 +1,366 @@
+[
+	{
+		"number": 0,
+		"name": "main",
+		"return_type": "int",
+		"parameters": [],
+		"number_of_if": 0
+	},
+	{
+		"number": 1,
+		"name": "my_realloc",
+		"return_type": "char*",
+		"parameters": [
+			{
+				"type": "char*",
+				"name": "old"
+			},
+			{
+				"type": "int",
+				"name": "oldlen"
+			},
+			{
+				"type": "int",
+				"name": "newlen"
+			}
+		],
+		"number_of_if": 0
+	},
+	{
+		"number": 2,
+		"name": "error",
+		"return_type": "void",
+		"parameters": [],
+		"number_of_if": 0
+	},
+	{
+		"number": 3,
+		"name": "takechar",
+		"return_type": "void",
+		"parameters": [],
+		"number_of_if": 1
+	},
+	{
+		"number": 4,
+		"name": "get_token",
+		"return_type": "void",
+		"parameters": [],
+		"number_of_if": 7
+	},
+	{
+		"number": 5,
+		"name": "peek",
+		"return_type": "int",
+		"parameters": [
+			{
+				"type": "char*",
+				"name": "s"
+			}
+		],
+		"number_of_if": 0
+	},
+	{
+		"number": 6,
+		"name": "accept",
+		"return_type": "int",
+		"parameters": [
+			{
+				"type": "char*",
+				"name": "s"
+			}
+		],
+		"number_of_if": 1
+	},
+	{
+		"number": 7,
+		"name": "expect",
+		"return_type": "void",
+		"parameters": [
+			{
+				"type": "char*",
+				"name": "s"
+			}
+		],
+		"number_of_if": 1
+	},
+	{
+		"number": 8,
+		"name": "save_int",
+		"return_type": "void",
+		"parameters": [
+			{
+				"type": "char*",
+				"name": "p"
+			},
+			{
+				"type": "int",
+				"name": "n"
+			}
+		],
+		"number_of_if": 0
+	},
+	{
+		"number": 9,
+		"name": "load_int",
+		"return_type": "int",
+		"parameters": [
+			{
+				"type": "char*",
+				"name": "p"
+			}
+		],
+		"number_of_if": 0
+	},
+	{
+		"number": 10,
+		"name": "emit",
+		"return_type": "void",
+		"parameters": [
+			{
+				"type": "int",
+				"name": "n"
+			},
+			{
+				"type": "char*",
+				"name": "s"
+			}
+		],
+		"number_of_if": 1
+	},
+	{
+		"number": 11,
+		"name": "be_push",
+		"return_type": "void",
+		"parameters": [],
+		"number_of_if": 0
+	},
+	{
+		"number": 12,
+		"name": "be_pop",
+		"return_type": "void",
+		"parameters": [
+			{
+				"type": "int",
+				"name": "n"
+			}
+		],
+		"number_of_if": 0
+	},
+	{
+		"number": 13,
+		"name": "sym_lookup",
+		"return_type": "int",
+		"parameters": [
+			{
+				"type": "char*",
+				"name": "s"
+			}
+		],
+		"number_of_if": 1
+	},
+	{
+		"number": 14,
+		"name": "sym_declare",
+		"return_type": "void",
+		"parameters": [
+			{
+				"type": "char*",
+				"name": "s"
+			},
+			{
+				"type": "int",
+				"name": "type"
+			},
+			{
+				"type": "int",
+				"name": "value"
+			}
+		],
+		"number_of_if": 1
+	},
+	{
+		"number": 15,
+		"name": "sym_declare_global",
+		"return_type": "int",
+		"parameters": [
+			{
+				"type": "char*",
+				"name": "s"
+			}
+		],
+		"number_of_if": 1
+	},
+	{
+		"number": 16,
+		"name": "sym_define_global",
+		"return_type": "void",
+		"parameters": [
+			{
+				"type": "int",
+				"name": "current_symbol"
+			}
+		],
+		"number_of_if": 1
+	},
+	{
+		"number": 17,
+		"name": "sym_get_value",
+		"return_type": "void",
+		"parameters": [
+			{
+				"type": "char*",
+				"name": "s"
+			}
+		],
+		"number_of_if": 5
+	},
+	{
+		"number": 18,
+		"name": "be_start",
+		"return_type": "void",
+		"parameters": [],
+		"number_of_if": 0
+	},
+	{
+		"number": 19,
+		"name": "be_finish",
+		"return_type": "void",
+		"parameters": [],
+		"number_of_if": 0
+	},
+	{
+		"number": 20,
+		"name": "promote",
+		"return_type": "void",
+		"parameters": [
+			{
+				"type": "int",
+				"name": "type"
+			}
+		],
+		"number_of_if": 2
+	},
+	{
+		"number": 21,
+		"name": "primary_expr",
+		"return_type": "int",
+		"parameters": [],
+		"number_of_if": 6
+	},
+	{
+		"number": 22,
+		"name": "binary1",
+		"return_type": "void",
+		"parameters": [
+			{
+				"type": "int",
+				"name": "type"
+			}
+		],
+		"number_of_if": 0
+	},
+	{
+		"number": 23,
+		"name": "binary2",
+		"return_type": "int",
+		"parameters": [
+			{
+				"type": "int",
+				"name": "type"
+			},
+			{
+				"type": "int",
+				"name": "n"
+			},
+			{
+				"type": "char*",
+				"name": "s"
+			}
+		],
+		"number_of_if": 0
+	},
+	{
+		"number": 24,
+		"name": "postfix_expr",
+		"return_type": "int",
+		"parameters": [],
+		"number_of_if": 3
+	},
+	{
+		"number": 25,
+		"name": "additive_expr",
+		"return_type": "int",
+		"parameters": [],
+		"number_of_if": 2
+	},
+	{
+		"number": 26,
+		"name": "shift_expr",
+		"return_type": "int",
+		"parameters": [],
+		"number_of_if": 2
+	},
+	{
+		"number": 27,
+		"name": "relational_expr",
+		"return_type": "int",
+		"parameters": [],
+		"number_of_if": 0
+	},
+	{
+		"number": 28,
+		"name": "equality_expr",
+		"return_type": "int",
+		"parameters": [],
+		"number_of_if": 2
+	},
+	{
+		"number": 29,
+		"name": "bitwise_and_expr",
+		"return_type": "int",
+		"parameters": [],
+		"number_of_if": 0
+	},
+	{
+		"number": 30,
+		"name": "bitwise_or_expr",
+		"return_type": "int",
+		"parameters": [],
+		"number_of_if": 0
+	},
+	{
+		"number": 31,
+		"name": "expression",
+		"return_type": "int",
+		"parameters": [],
+		"number_of_if": 2
+	},
+	{
+		"number": 32,
+		"name": "type_name",
+		"return_type": "void",
+		"parameters": [],
+		"number_of_if": 0
+	},
+	{
+		"number": 33,
+		"name": "statement",
+		"return_type": "void",
+		"parameters": [],
+		"number_of_if": 8
+	},
+	{
+		"number": 34,
+		"name": "program",
+		"return_type": "void",
+		"parameters": [],
+		"number_of_if": 3
+	},
+	{
+		"number": 35,
+		"name": "main1",
+		"return_type": "int",
+		"parameters": [],
+		"number_of_if": 0
+	}
+]
