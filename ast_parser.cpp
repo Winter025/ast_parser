@@ -72,13 +72,13 @@ void ASTparse :: parse_return_type(json_value type, AST* ast, int ASTnumber) {
 		type = json_get(type, "type");
 		nodetype = json_get_string(type, "_nodetype");
 
-        if(strcmp(nodetype, cmp_PtrDecl) == 0) { ptr = 1; }
+        	if(strcmp(nodetype, cmp_PtrDecl) == 0) { ptr = 1; }
 
 		if(strcmp(nodetype, cmp_IdentifierType) == 0) {
 			returnType = json_get(type, "names");
 			returntype = json_get_string(returnType, 0);
 
-            if(ptr == 1) { strcat(returntype, "*"); }
+            		if(ptr == 1) { strcat(returntype, "*"); }
 
 			strcpy(ast[ASTnumber].return_type, returntype);
 			break;
@@ -105,11 +105,11 @@ void ASTparse :: parse_param_type(json_value params, AST* ast, int ASTnumber) {
     ast[ASTnumber].param_type = (char**)malloc((json_len(params) + 1) * sizeof(char*));
 
 	for(int i = 0; i < json_len(params); i++) {
-        ptr = 0;
+        	ptr = 0;
 		obj = json_get(params, i);
 		type = json_get(obj, "type");
-        nodetype = json_get_string(type, "_nodetype");
-        if(strcmp(nodetype, cmp_PtrDecl) == 0) { ptr = 1; }
+        	nodetype = json_get_string(type, "_nodetype");
+        	if(strcmp(nodetype, cmp_PtrDecl) == 0) { ptr = 1; }
 
 		while(1) {
 			type = json_get(type, "type");
@@ -119,7 +119,7 @@ void ASTparse :: parse_param_type(json_value params, AST* ast, int ASTnumber) {
 				paramType = json_get(type, "names");
 				paramtype = json_get_string(paramType, 0);
 
-                if(ptr == 1) { strcat(paramtype, "*"); }
+                		if(ptr == 1) { strcat(paramtype, "*"); }
 
 				ast[ASTnumber].param_type[i] = (char*)malloc(10 * sizeof(char));
 				strcpy(ast[ASTnumber].param_type[i], paramtype);
@@ -157,7 +157,7 @@ void find_if(json_value obj, int* if_cnt) {
     const char* cmp_If = "If";
 
 
-  	nodetype = json_get_string(obj, "_nodetype");
+    nodetype = json_get_string(obj, "_nodetype");
 
     if(strcmp(nodetype, cmp_If) == 0) { 
         (*if_cnt)++;
@@ -195,7 +195,7 @@ void saveAST(AST* ast, int func_num) {
         if(ast[i].param_type[0] != NULL) {
             fprintf(fp, "\t\t\"parameters\": [\n");
 
-	        while(ast[i].param_type[j] != NULL) {
+	    while(ast[i].param_type[j] != NULL) {
                 fprintf(fp, "\t\t\t{\n");
                 fprintf(fp, "\t\t\t\t\"type\": \"%s\",\n", ast[i].param_type[j]);
                 fprintf(fp, "\t\t\t\t\"name\": \"%s\"\n", ast[i].param_name[j]);
