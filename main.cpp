@@ -25,7 +25,7 @@ int main()
 
     ext = json_get(json, "ext");
     func_num = create.func_cnt(ext);
-	printf("number of function: %d\n", func_num);
+    printf("number of function: %d\n", func_num);
 
     ASTparse parse(func_num);
     ast = parse.getAST();
@@ -36,10 +36,10 @@ int main()
         ast[ASTnumber].num = ASTnumber;
 
         obj = json_get(ext, i);
-		body = json_get(obj, "body");
+	body = json_get(obj, "body");
         decl = json_get(obj, "decl");
 
-		if(body.type != JSON_OBJECT) { continue; }
+	if(body.type != JSON_OBJECT) { continue; }
         parse.parse_function_name(decl, ast, ASTnumber);
 
         type = json_get(decl, "type");
