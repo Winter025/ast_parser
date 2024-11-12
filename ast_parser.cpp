@@ -137,15 +137,6 @@ void ASTparse :: count_if(json_value block_items, AST* ast, int ASTnumber) {
 	for(int i = 0; i < json_len(block_items); i++) {
         obj = json_get(block_items, i);
         find_if(obj, &if_cnt);
-
-        stmt = json_get(obj, "stmt");
-        if(stmt.type == JSON_OBJECT) {
-            stmt_block = json_get(stmt, "block_items");
-            for(int j = 0; j < json_len(stmt_block); j++) {
-                obj = json_get(stmt_block, j);
-                find_if(obj, &if_cnt);
-            }
-        }
     }
     ast[ASTnumber].if_num = if_cnt;
 }
@@ -153,8 +144,9 @@ void ASTparse :: count_if(json_value block_items, AST* ast, int ASTnumber) {
 
 void find_if(json_value obj, int* if_cnt) {
     char *nodetype;
-    json_value iftrue, true_block, iffalse, true_obj;
-    const char* cmp_If = "If";
+    json_value iftrue, true_block, iffalse, true_obj, stmt, stmt_block, stmt_obj;
+    const char *cmp_If = "If";
+    const char *cmp_While = "While";
 
 
   	nodetype = json_get_string(obj, "_nodetype");
@@ -170,6 +162,15 @@ void find_if(json_value obj, int* if_cnt) {
         for(int k = 0; k < json_len(true_block); k++) {
             true_obj = json_get(true_block, k);
             find_if(true_obj, if_cnt);
+        }
+    }
+    else if(strcmp(nodetype, cmp_While) == 0) {
+        stmt = json_get(obj, "stmt");
+        stmt_block = json_get(stmt, "block_items");
+
+        for(int j = 0; j < json_len(stmt_block); j++) {
+            stmt_obj = json_get(stmt_block, j);
+            find_if(stmt_obj, if_cnt);
         }
     }
     else { return; }

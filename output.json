@@ -245,7 +245,7 @@
 		"name": "primary_expr",
 		"return_type": "int",
 		"parameters": [],
-		"number_of_if": 6
+		"number_of_if": 9
 	},
 	{
 		"number": 22,
@@ -354,7 +354,7 @@
 		"name": "program",
 		"return_type": "void",
 		"parameters": [],
-		"number_of_if": 3
+		"number_of_if": 4
 	},
 	{
 		"number": 35,

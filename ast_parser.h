@@ -43,7 +43,7 @@ class ASTparse {
     const char *cmp_If = "If";
     const char *cmp_Compound = "Compound";
     AST *ast;
-    json_value json, body, decl, type, returnType, obj, paramType, stmt, stmt_block;
+    json_value json, body, decl, type, returnType, obj, paramType;
 
 public:
     ASTparse(int cnt);
